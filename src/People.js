@@ -1,12 +1,18 @@
 import React from 'react';
 
 const People = ({ people }) => {
+
+  const renderedPeople = people.map(person => {
+    return (
+      <div key={person.name}>
+        <h1>{person.name}</h1>
+        <p>{person.craft}</p>
+      </div>
+    )
+  })
+
   return (
-    <div>
-      {people.map(person => {
-        return <p key={person.name}>{person.name}</p>
-      })}
-    </div>
+    <div>{renderedPeople}</div>
   )
 }
 
